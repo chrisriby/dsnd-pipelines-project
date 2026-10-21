@@ -216,7 +216,7 @@ param_grid = {
 
 grid_search = GridSearchCV(
     model_pipeline, param_grid,
-    cv=3, scoring='f1_macro', n_jobs=-1, verbose=1,
+    cv=3, scoring='f1_macro', n_jobs=1, verbose=1,  # 1: see note below
 )
 grid_search.fit(X_train, y_train)
 grid_search.best_params_, grid_search.best_score_
@@ -225,7 +225,8 @@ grid_search.best_params_, grid_search.best_score_
 Why `memory='cache'` on the pipeline: the spaCy step's parameters never change
 in the grid, so scikit-learn reuses its output per fold instead of
 re-running spaCy for every parameter combination. Without it, the grid above
-(24 combos × 3 folds) would take hours.
+(24 combos × 3 folds) would take hours. Keep `n_jobs=1`: parallel worker
+processes cannot find classes defined in the notebook, so the cache fails.
 
 Hints:
 - `scoring='f1_macro'` (or `'f1'` for class 0 via `make_scorer`) fits the

@@ -1,8 +1,8 @@
-scikit-learn
-pandas
-numpy
-spacy
-notebook
-ipykernel
-matplotlib
-seaborn
+scikit-learn==1.9.1
+pandas==3.0.6
+numpy==2.5.4
+spacy==3.8.16
+notebook==7.6.3
+ipykernel==7.4.0
+matplotlib==3.11.2
+seaborn==0.13.2

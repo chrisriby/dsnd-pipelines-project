@@ -1,3 +1,6 @@
-# Purpose of this Folder
+# starter
 
-This folder should contain the scaffolded project files to get a student started on their project. This repo will be added to the Classroom for students to use, so please do not have any solutions in this folder.
+- `starter.ipynb`: the project notebook (data exploration, pipeline, training, fine-tuning, test evaluation)
+- `data/reviews.csv`: the StyleSense review dataset
+
+The notebook writes a `cache/` folder here when it runs (cached spaCy output, ignored by git).
